@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nilda Bolos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        barlow: ['Barlow', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#F06292'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-barlow text-gray-800 bg-gray-100">
+
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between">
+                <div class="flex space-x-7">
+                    <div>
+                        <a href="#" class="flex items-center py-4 px-2">
+                            <span class="font-semibold text-pink-500 text-lg">Nilda Bolos</span>
+                        </a>
+                    </div>
+                    <div class="hidden md:flex items-center space-x-1">
+                        <a href="#home" class="py-4 px-2 text-pink-500 border-b-4 border-pink-500 font-semibold">HOME</a>
+                        <a href="#cardapio" class="py-4 px-2 text-gray-500 font-semibold hover:text-pink-400 transition duration-300">Cardápio</a>
+                    </div>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button class="outline-none mobile-menu-button" id="btn-mobile">
+                        <svg class="w-6 h-6 text-black-500 hover:text-pink-500" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                            <path d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="hidden mobile-menu md:hidden" id="menu-mobile">
+            <ul>
+                <li><a href="#home" class="block text-sm px-2 py-4 text-white bg-pink-300 font-semibold">Home</a></li>
+                <li><a href="#cardapio" class="block text-sm px-2 py-4 hover:bg-red-300 transition duration-300">Cardápio</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <script>
+        const btn = document.getElementById('btn-mobile');
+        const menu = document.getElementById('menu-mobile');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+
+    <header class="flex items-center justify-center px-6 mt-[5vh]">
+        <figure>
+            <img src="./ascets/logo.png" alt="Logo" class="w-[170vw] max-w-[300px]">
+        </figure>
+    </header>
+
+    <section class="text-center p-8">
+        <div class="md:flex md:items-center md:justify-center md:gap-10">
+            <article class="md:w-[45%]">
+                <h1 class="text-2xl md:text-4xl font-semibold">
+                    O verdadeiro sabor de docinhos caseiros!
+                </h1>
+            </article>
+            <!-- <figure class="md:w-[45%] mt-6 md:mt-0">
+                <img src="./ascets/docess.png" alt="Prato japonês" class="w-[90%] mx-auto">
+            </figure> -->
+        </div>
+    </section>
+
+    <!-- CARDÁPIO -->
+    <section id="cardapio" class="max-w-[90vw] mx-auto mt-[5vh] p-8">
+
+        <h2 class="text-3xl font-bold text-center mb-8">Cardápio</h2>
+
+        <nav id="nav-categorias" class="overflow-x-auto whitespace-nowrap snap-x flex gap-2 mt-6 pb-1">
+            <button data-cat="bolos caseiros" class="snap-start px-4 py-1 rounded-full bg-primary text-white font-bold text-sm transition-transform duration-150 cursor-pointer flex-shrink-0 btn-cat">
+                Bolos Caseiros
+            </button>
+            <button data-cat="aniversario" class="snap-start px-4 py-1 rounded-full bg-primary text-white font-bold text-sm transition-transform duration-150 cursor-pointer flex-shrink-0 btn-cat">
+                Bolos de Aniversário
+            </button>
+           
+            <button data-cat="docinhos" class="snap-start px-4 py-1 rounded-full bg-primary text-white font-bold text-sm transition-transform duration-150 cursor-pointer flex-shrink-0 btn-cat">
+                Docinhos
+            </button>
+        </nav>
+
+        <!-- Bolos Caseiros -->
+        <div id="cat-bolos caseiros" class="categoria-conteudo">
+            <h3 class="text-primary text-xl mt-6 font-semibold">Bolos Caseiros</h3>
+            <div class="mt-4 space-y-4">
+                <article>
+                    <div class="flex justify-between">
+                        <h4 class="font-bold text-lg">Bolo de Chocolate</h4>
+                        <span class="text-primary font-semibold">R$ 17,00</span>
+                    </div>
+                    <p class="text-sm text-gray-500">Bolo de chocolate com recheio de Chocolate</p>
+                </article>
+                <article>
+                    <div class="flex justify-between">
+                        <h4 class="font-bold text-lg">Bolo de Cenoura</h4>
+                        <span class="text-primary font-semibold">R$ 15,00</span>
+                    </div>
+                    <p class="text-sm text-gray-500">Bolo de cenoura com recheio de chocolate</p>
+                </article>
+                <article>
+                    <div class="flex justify-between">
+                        <h4 class="font-bold text-lg">Bolo de Milho</h4>
+                        <span class="text-primary font-semibold">R$ 20,00</span>
+                    </div>
+                    <p class="text-sm text-gray-500">Bolo de Milho cremoso</p>
+                </article>
+                <article>
+                    <div class="flex justify-between">
+                        <h4 class="font-bold text-lg">Bolo de Fubá</h4>
+                        <span class="text-primary font-semibold">R$ 15,00</span>
+                    </div>
+                    <p class="text-sm text-gray-500">Bolo de Fubá caseiro</p>
+                </article>
+            </div>
+        </div>
+
+        <!-- Bolos de Aniversário -->
+        <div id="cat-aniversario" class="categoria-conteudo hidden">
+            <h3 class="text-primary text-xl mt-6 font-semibold">Bolos de Aniversário</h3>
+
+            <!-- Preço por quilo -->
+            <div class="mt-4 bg-pink-50 border border-pink-200 rounded-xl px-5 py-4">
+                <p class="font-bold text-lg text-gray-800">A partir de <span class="text-primary">R$ 70,00</span> o quilo</p>
+                
+            </div>
+
+            <!-- Recheios -->
+            <div class="mt-6">
+                <h4 class="font-bold text-base text-gray-700 mb-3 uppercase tracking-wide">🎂 Cardápio de Recheios</h4>
+                <div class="grid grid-cols-2 gap-2">
+                    <div class="flex items-center gap-2 bg-white rounded-lg px-3 py-2 shadow-sm border border-100">
+                        <span class="text-pink-400">✦</span>
+                        <span class="text-sm font-medium">Brigadeiro</span>
+                    </div>
+                    <div class="flex items-center gap-2 bg-white rounded-lg px-3 py-2 shadow-sm border border-100">
+                        <span class="text-pink-400">✦</span>
+                        <span class="text-sm font-medium">Brigadeiro Branco</span>
+                    </div>
+                    <div class="flex items-center gap-2 bg-white rounded-lg px-3 py-2 shadow-sm border border-100">
+                        <span class="text-pink-400">✦</span>
+                        <span class="text-sm font-medium">Ninho c/ Morango</span>
+                    </div>
+                    <div class="flex items-center gap-2 bg-white rounded-lg px-3 py-2 shadow-sm border border-100">
+                        <span class="text-pink-400">✦</span>
+                        <span class="text-sm font-medium">Creme Belga c/ Abacaxi</span>
+                    </div>
+                    <div class="flex items-center gap-2 bg-white rounded-lg px-3 py-2 shadow-sm border border-100">
+                        <span class="text-pink-400">✦</span>
+                        <span class="text-sm font-medium">Doce de Leite</span>
+                    </div>
+                    <div class="flex items-center gap-2 bg-white rounded-lg px-3 py-2 shadow-sm border border-100">
+                        <span class="text-pink-400">✦</span>
+                        <span class="text-sm font-medium">Mousse de Chocolate</span>
+                    </div>
+                    <div class="flex items-center gap-2 bg-white rounded-lg px-3 py-2 shadow-sm border border-100">
+                        <span class="text-pink-400">✦</span>
+                        <span class="text-sm font-medium">Mousse Branco</span>
+                    </div>
+                    <div class="flex items-center gap-2 bg-white rounded-lg px-3 py-2 shadow-sm border border-100">
+                        <span class="text-pink-400">✦</span>
+                        <span class="text-sm font-medium">Coco c/ Abacaxi</span>
+                    </div>
+                    <div class="flex items-center gap-2 bg-white rounded-lg px-3 py-2 shadow-sm border border-100">
+                        <span class="text-pink-400">✦</span>
+                        <span class="text-sm font-medium">KitKat</span>
+                    </div>
+                    <div class="flex items-center gap-2 bg-white rounded-lg px-3 py-2 shadow-sm border border-100">
+                        <span class="text-pink-400">✦</span>
+                        <span class="text-sm font-medium">Nozes</span>
+                    </div>
+                    <div class="flex items-center gap-2 bg-white rounded-lg px-3 py-2 shadow-sm border border-100">
+                        <span class="text-pink-400">✦</span>
+                        <span class="text-sm font-medium">Prestígio</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       
+
+        <!-- Docinhos -->
+        <div id="cat-docinhos" class="categoria-conteudo hidden">
+            <h3 class="text-primary text-xl mt-6 font-semibold">Docinhos</h3>
+            <p class="text-sm text-gray-500 mt-1 mb-4">Preços por <span class="font-semibold text-gray-700">cento (100 unidades)</span></p>
+            <div class="mt-2 space-y-4">
+                <article>
+                    <div class="flex justify-between">
+                        <h4 class="font-bold text-lg">Brigadeiro de Chocolate</h4>
+                        <span class="text-primary font-semibold">R$ 95,00</span>
+                    </div>
+                    <p class="text-sm text-gray-500">o cento</p>
+                </article>
+                <article>
+                    <div class="flex justify-between">
+                        <h4 class="font-bold text-lg">Beijinho</h4>
+                        <span class="text-primary font-semibold">R$ 95,00</span>
+                    </div>
+                    <p class="text-sm text-gray-500">o cento</p>
+                </article>
+                <article>
+                    <div class="flex justify-between">
+                        <h4 class="font-bold text-lg">Morango</h4>
+                        <span class="text-primary font-semibold">R$ 100,00</span>
+                    </div>
+                    <p class="text-sm text-gray-500">o cento</p>
+                </article>
+                <article>
+                    <div class="flex justify-between">
+                        <h4 class="font-bold text-lg">Limão</h4>
+                        <span class="text-primary font-semibold">R$ 100,00</span>
+                    </div>
+                    <p class="text-sm text-gray-500">o cento</p>
+                </article>
+                <article>
+                    <div class="flex justify-between">
+                        <h4 class="font-bold text-lg">Maracujá</h4>
+                        <span class="text-primary font-semibold">R$ 100,00</span>
+                    </div>
+                    <p class="text-sm text-gray-500">o cento</p>
+                </article>
+                <article>
+                    <div class="flex justify-between">
+                        <h4 class="font-bold text-lg">Paçoca</h4>
+                        <span class="text-primary font-semibold">R$ 100,00</span>
+                    </div>
+                    <p class="text-sm text-gray-500">o cento</p>
+                </article>
+                <article>
+                    <div class="flex justify-between">
+                        <h4 class="font-bold text-lg">Surpresa de Uva</h4>
+                        <span class="text-primary font-semibold">R$ 150,00</span>
+                    </div>
+                    <p class="text-sm text-gray-500">o cento</p>
+                </article>
+            </div>
+        </div>
+
+    </section>
+
+    <footer class="bg-pink-800 text-white text-center p-12 mt-[5vh]">
+        <p>© 2026 Nilda Bolos - Todos os direitos reservados</p>
+        <p class="mb-2">Rua João Moncayo, Número 160 - Sorocaba-SP</p>
+        <p class="mb-2">(11) 95839-0992</p>
+    </footer>
+
+    <aside>
+        <a href="https://wa.me/5515987654321">
+            <img src="./ascets/whatsapp.png" class="h-[5vh] fixed bottom-[2vh] right-[4vw]" alt="WhatsApp">
+        </a>
+    </aside>
+
+    <script>
+        const botoes = document.querySelectorAll('.btn-cat');
+        const conteudos = document.querySelectorAll('.categoria-conteudo');
+
+        function mudarCategoria(cat) {
+            conteudos.forEach(div => {
+                div.id === 'cat-' + cat ? div.classList.remove('hidden') : div.classList.add('hidden');
+            });
+            botoes.forEach(btn => {
+                if (btn.dataset.cat === cat) {
+                    btn.classList.add('bg-primary', 'text-white');
+                    btn.classList.remove('bg-[#ebebeb]', 'text-dark');
+                } else {
+                    btn.classList.remove('bg-primary', 'text-white');
+                    btn.classList.add('bg-[#ebebeb]', 'text-dark');
+                }
+            });
+        }
+
+        let startX = 0;
+        let startY = 0;
+
+        botoes.forEach(btn => {
+            btn.addEventListener('touchstart', (e) => {
+                startX = e.touches[0].clientX;
+                startY = e.touches[0].clientY;
+                btn.classList.add('scale-95', 'opacity-80');
+            });
+            btn.addEventListener('touchend', (e) => {
+                btn.classList.remove('scale-95', 'opacity-80');
+                const endX = e.changedTouches[0].clientX;
+                const endY = e.changedTouches[0].clientY;
+                const deltaX = Math.abs(endX - startX);
+                const deltaY = Math.abs(endY - startY);
+                if (deltaX < 10 && deltaY < 10) {
+                    mudarCategoria(btn.dataset.cat);
+                }
+            });
+            btn.addEventListener('touchcancel', () => {
+                btn.classList.remove('scale-95', 'opacity-80');
+            });
+            btn.addEventListener('click', () => {
+                mudarCategoria(btn.dataset.cat);
+            });
+        });
+    </script>
+
+</body>
+</html>
